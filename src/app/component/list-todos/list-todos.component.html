@@ -1,0 +1,29 @@
+<div class="container">
+  <h3>Candidates List </h3>
+
+  <button (click)="exportCandidatesAsExcel()" class="btn btn-primary mb-3">
+    Download File in Excel Format
+  </button>
+  <table class="table">
+   <caption>Candidates</caption>
+   <thead>
+       <tr>
+        <th>ID</th>
+        <th>Candidate.No</th>
+        <th>Candidate Name</th>
+        <th>Candidate Rank</th>
+        <th>Candidate Score</th>
+        <th>Update Date</th>
+       </tr>
+   </thead>
+   <tbody>
+    <tr *ngFor="let cand of candidates">
+      <td>{{cand.recId}}</td>
+      <td>{{cand.candidateNo}}</td>
+      <td>{{cand.candidateName}}</td>
+      <td>{{cand.candidateRank}}</td>
+      <td>{{cand.candidateScore}}</td>
+      <td>{{cand.updateDate| date}}</td>
+    </tr>
+   </tbody>
+</table>
